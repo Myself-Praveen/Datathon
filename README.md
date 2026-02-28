@@ -61,6 +61,8 @@ It reads exactly what is visible, provides pin-point bounding box coordinates, e
 Datathon/
 ├── app2.py                 # The centralized main UI App Dashboard
 ├── texttract_dashboard.py  # Alternative pipeline architecture design UI
+├── app.py                  # Legacy Proof-of-Concept for early OCR logic
+├── app1.py                 # Early iteration built specifically for Google Colab/ngrok
 ├── batch_eval.py           # Headless local script specifically for benchmarking datasets
 ├── requirements.txt        # Crucial Python environment dependencies 
 ├── .gitignore              # Restricting environment file pollution on Github
