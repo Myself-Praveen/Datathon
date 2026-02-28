@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaddleOCR Studio</title>
+    <!-- Modern Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <main class="app-container">
+        
+        <!-- Hero Header -->
+        <header class="hero-banner">
+            <h1>📄 PaddleOCR Studio</h1>
+            <p class="subtitle">Advanced OCR Pipeline &nbsp;·&nbsp; JSON Export &nbsp;·&nbsp; Visual Results</p>
+            <div class="hero-chips">
+                <span class="chip detect">🔎 Detection + Recognition</span>
+                <span class="chip export">📦 JSON Export</span>
+                <span class="chip local">⚡ Local Processing</span>
+            </div>
+        </header>
+
+        <!-- Upload Section -->
+        <section class="upload-section">
+            <div class="upload-card" id="drop-zone">
+                <input type="file" id="file-input" accept="image/jpeg, image/png, image/jpg" hidden>
+                <div class="upload-content" id="upload-idle">
+                    <span class="upload-icon">🖼️</span>
+                    <h3>Upload an image</h3>
+                    <p>Drag & drop or <span class="browser-btn">browse</span></p>
+                    <small>Supported: JPG · PNG · JPEG</small>
+                </div>
+                <!-- Preview After Image Selected -->
+                <div class="upload-content preview-state" id="upload-preview" style="display: none;">
+                    <img id="image-preview" src="" alt="Selected Image preview">
+                    <div class="preview-actions">
+                        <button id="change-image-btn" class="btn btn-secondary">Change Image</button>
+                        <button id="run-ocr-btn" class="btn btn-primary">🚀 Run OCR</button>
+                    </div>
+                </div>
+                
+                <!-- Loading State -->
+                <div class="upload-content loading-state" id="upload-loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <h3>Running OCR...</h3>
+                    <p>Please wait while PaddleOCR processes your image.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section (Hidden Initially) -->
+        <section class="results-section" id="results-section" style="display: none;">
+            <div class="success-banner">
+                ✅ OCR completed successfully!
+            </div>
+            
+            <h2 class="section-title">🖼️ OCR Result</h2>
+            <div class="results-grid">
+                
+                <!-- Original Image -->
+                <div class="img-card">
+                    <div class="img-card-label">Original</div>
+                    <img id="result-original" src="" alt="Original Image">
+                </div>
+                
+                <!-- OCR Annotated Image -->
+                <div class="img-card">
+                    <div class="img-card-label">OCR Annotated</div>
+                    <img id="result-annotated" src="" alt="OCR Annotated Image">
+                </div>
+
+            </div>
+
+            <!-- Download JSON Section -->
+            <div class="export-section">
+                <h2 class="section-title">📦 Export</h2>
+                <a id="download-json-url" href="#" target="_blank" download class="btn btn-download">
+                    📥 Download OCR JSON
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            PaddleOCR Studio &nbsp;·&nbsp; Torch Titans &nbsp;·&nbsp; Local Processing &nbsp;·&nbsp; JSON + Visual Output
+        </footer>
+
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

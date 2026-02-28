@@ -1,0 +1,25 @@
+# Virtual Environments
+venv/
+.venv/
+env/
+.env/
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+
+# IDEs
+.vscode/
+.idea/
+.qodo/
+
+# Outputs
+uploads/
+output/
+batch_output/
+*.txt
+!requirements.txt
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
